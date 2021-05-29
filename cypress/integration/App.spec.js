@@ -117,12 +117,20 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '600000000')
   })
 
-  xit('should return error', () => {
+  it('should return error if divide by zero', () => {
     cy.get('#number6').click();
     cy.get('#operator_divide').click();
     cy.get('#number0').click();
     cy.get('#operator_equals').click();
-    cy.get('.display').should('contain', 'error')
+    cy.get('.display').should('contain', 'Error')
+  })
+
+  
+  it('should return zero when clear is pressed', () => {
+    cy.get('#number8').click();
+    cy.get('#number8').click();
+    cy.get('#clear').click();
+    cy.get('.display').should('contain', '0')
   })
 
 })

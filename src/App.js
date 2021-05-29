@@ -75,9 +75,16 @@ function App() {
   }
 
   const divide = (number) => {
+    if (previousTotal == 0 || number == 0) { 
+      setRunningTotal("Error")}
+      else {
     setRunningTotal(parseFloat(previousTotal) / parseFloat(number));
   }
+}
 
+  // const divide = (number) => {
+  //   setRunningTotal(parseFloat(previousTotal) / parseFloat(number));
+  // }
 
   return (
     <div className="container">
